@@ -1,0 +1,26 @@
+# Pact Broker + Postgres  ->  http://localhost:9292
+services:
+  postgres:
+    image: postgres:15
+    healthcheck:
+      test: psql postgres --command "select 1" -U postgres
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+
+  pact-broker:
+    image: pactfoundation/pact-broker:latest
+    ports:
+      - "9292:9292"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PACT_BROKER_PORT: "9292"
+      PACT_BROKER_DATABASE_URL: "postgres://postgres:password@postgres/postgres"
+      PACT_BROKER_LOG_LEVEL: INFO
+      PACT_BROKER_SQL_LOG_LEVEL: DEBUG

@@ -1,0 +1,18 @@
+{
+  "name": "orders-frontend-consumer",
+  "version": "1.0.0",
+  "description": "Consumer (frontend) side of the Pact contract with the Orders API",
+  "scripts": {
+    "test": "jest --runInBand",
+    "pact:publish": "node scripts/publish.js"
+  },
+  "devDependencies": {
+    "@pact-foundation/pact": "^13.0.0",
+    "@pact-foundation/pact-cli": "latest",
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 30000
+  }
+}

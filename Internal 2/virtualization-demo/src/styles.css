@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Segoe UI, Arial, sans-serif; background: #f4f6fa; color: #1f2937; }
+.app, .home { max-width: 1100px; margin: 0 auto; padding: 12px 16px; }
+.home h1 { margin-top: 40px; }
+.home li { margin: 10px 0; font-size: 18px; }
+.hint { color: #6b7280; }
+.back { font-size: 13px; text-decoration: none; color: #2563eb; }
+
+.metrics { background: #fff; border: 1px solid #d9dee8; border-radius: 8px; padding: 10px 14px; margin: 8px 0 12px; }
+.metrics h2 { font-size: 16px; margin: 0 0 8px; }
+.metrics .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.metrics .m { background: #f1f5f9; border-radius: 6px; padding: 6px 10px; }
+.metrics .m span { display: block; font-size: 11px; color: #64748b; }
+.metrics .m b { font-size: 17px; }
+.bench { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font-size: 13px; }
+.bench button { background: #2563eb; color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+.bench button:disabled { background: #94a3b8; cursor: wait; }
+
+.table-wrap { background: #fff; border: 1px solid #d9dee8; border-radius: 8px; overflow: hidden; }
+.scroller { overflow: auto; position: relative; }
+.row { display: grid; grid-template-columns: 70px 1.2fr 2fr 1fr 1fr 110px; align-items: center; height: 40px; border-bottom: 1px solid #eef1f6; font-size: 14px; }
+.row.header { background: #1e293b; color: #fff; font-weight: 600; }
+.cell { padding: 0 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.badge { padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+.badge.active { background: #dcfce7; color: #166534; }
+.badge.onleave { background: #fef9c3; color: #854d0e; }
+.badge.remote { background: #dbeafe; color: #1e40af; }
